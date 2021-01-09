@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+Game.destroy_all 
+Player.destroy_all 
+Frame.destroy_all 
+
+
+game = Game.create({})
+2.times {
+    player = Player.create( game: game)
+    10.times {
+        Frame.create( player: player )
+    } 
+} 
+
+
