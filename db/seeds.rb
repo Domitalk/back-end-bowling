@@ -14,7 +14,7 @@ Frame.destroy_all
 
 game = Game.create({})
 2.times {
-    player = Player.create( game: game)
+    player = Player.create( game: game )
     10.times {
         Frame.create( player: player )
     } 
