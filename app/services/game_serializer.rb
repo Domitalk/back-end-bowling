@@ -17,8 +17,7 @@ class GameSerializer
             },
             except: [:created_at, :updated_at]
         }
-
+        
         @game.to_json(options)
     end
-
 end 

@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(version: 2021_01_09_204428) do
   create_table "frames", force: :cascade do |t|
     t.bigint "player_id", null: false
     t.integer "frame_number"
-    t.integer "first"
-    t.integer "second"
-    t.integer "bonus"
+    t.integer "first_score"
+    t.integer "second_score"
+    t.integer "bonus_score"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["player_id"], name: "index_frames_on_player_id"
