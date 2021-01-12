@@ -14,12 +14,21 @@ Frame.destroy_all
 game = Game.create({})
 
 player = Player.create( game: game, name: "Dummy Name")
-for i in 1..10 do 
+for i in 1..9 do 
     Frame.create( 
         player: player, 
-        frame_number: i 
+        frame_number: i, 
+        first_score: 10, 
+        second_score: 10
     )
 end 
+Frame.create(
+    player: player, 
+    frame_number: 10, 
+    first_score: 10, 
+    second_score: 10, 
+    bonus_score: 10
+)
 
 
 
