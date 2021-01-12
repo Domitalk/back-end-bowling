@@ -11,13 +11,15 @@ Game.destroy_all
 Player.destroy_all 
 Frame.destroy_all 
 
-
 game = Game.create({})
-2.times {
-    player = Player.create( game: game )
-    10.times {
-        Frame.create( player: player )
-    } 
-} 
+
+player = Player.create( game: game, name: "Dummy Name")
+for i in 1..10 do 
+    Frame.create( 
+        player: player, 
+        frame_number: i 
+    )
+end 
+
 
 
