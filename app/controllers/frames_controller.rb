@@ -24,15 +24,12 @@ class FramesController < ApplicationController
         )
     end 
 
-    def check_and_return_correct_hash_for_update
-        # if the xxx_score value is nil, ! will return true !! will return false 
-        # !xxx_score ? yes it is empty : no it is filled
-        
-        if !@frame[:first_score] 
+    def check_and_return_correct_hash_for_update        
+        if !!frame_params[:first_score] 
             { first_score: frame_params[:first_score] }
-        elsif !@frame[:second_score]
+        elsif !!frame_params[:second_score]
             { second_score: frame_params[:second_score] }
-        elsif @frame[:frame_number] === 10
+        elsif !!frame_params[:bonus_score] 
             { bonus_score: frame_params[:bonus_score] }
         end 
     end 
